@@ -1,693 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Modular Synthesis &amp; Electronic Sound Design | Course</title>
-  <style>
-    @font-face {
-      font-family: "SizmoPro";
-      src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-Light.woff2?v=1760171452") format("woff2"),
-           url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-Light.woff?v=1760171784") format("woff");
-      font-weight: 300;
-      font-style: normal;
-    }
-
-    @font-face {
-      font-family: "SizmoPro";
-      src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-Bold.woff2?v=1760171452") format("woff2"),
-      url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-Bold.woff?v=1760171783") format("woff");
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: "SizmoPro";
-      src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro.woff2?v=1760171453") format("woff2"),
-           url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro.woff?v=1760171783") format("woff");
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: "SizmoPro";
-      src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-Light.woff2?v=1760171452") format("woff2"),
-      url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-Light.woff?v=1760171784") format("woff");
-      font-weight: 300;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: "SizmoLinePro";
-      src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoLinePro-Bold.woff2?v=1760171453") format("woff2"),
-           url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoLinePro-Bold.woff?v=1760171784") format("woff");
-      font-weight: 700;
-      font-style: normal;
-    }
-
-    :root {
-      --primary-orange: #FF7E00;
-      --white: #FFFFFF;
-      --black: #000000;
-      --dark-bg: #121212;
-      --header-font: 'SizmoPro', sans-serif;
-      --body-font: 'SizmoPro', sans-serif;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: var(--body-font);
-      font-weight: 300;
-      background-color: var(--primary-orange);
-      color: var(--black);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3, .nav-logo {
-      font-family: var(--header-font);
-      font-weight: 700;
-      text-transform: uppercase;
-      font-style: italic;
-      letter-spacing: -0.05em;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .jagged-hero {
-      clip-path: none;
-    }
-
-    .jagged-border-r {
-      clip-path: polygon(0 0, 92% 0, 100% 8%, 100% 100%, 0 100%);
-    }
-
-    .jagged-border-l {
-      clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%, 0 8%);
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: var(--primary-orange);
-      border-bottom: 4px solid var(--black);
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 3rem;
-    }
-
-    .nav-logo {
-      font-size: 1.5rem;
-      color: var(--white);
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .nav-links a {
-      color: var(--white);
-      text-decoration: none;
-      text-transform: uppercase;
-      font-weight: bold;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-    }
-
-    .btn-nav {
-      background: var(--white);
-      color: var(--black);
-      padding: 0.6rem 1.5rem;
-      font-family: var(--header-font);
-      text-decoration: none;
-      font-size: 0.8rem;
-      transition: 0.2s;
-    }
-
-    .btn-nav:hover {
-      background: var(--black);
-      color: var(--white);
-    }
-
-    .hero {
-      background-color: var(--primary-orange);
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      padding-top: 80px;
-      overflow: hidden;
-    }
-
-    .hero-image-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background-color: var(--black);
-    }
-
-    .hero-image-overlay img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.3;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      color: var(--white);
-      width: 100%;
-    }
-
-    .hero h1 {
-      font-size: 4.5rem;
-      line-height: 0.9;
-      margin-bottom: 1rem;
-    }
-
-    .hero h1 span {
-      display: block;
-      color: var(--white);
-      font-size: 2.5rem;
-      margin-top: 10px;
-    }
-
-    .hero-info-box {
-      display: inline-block;
-      border: 4px solid var(--white);
-      padding: 1.5rem;
-      margin: 2rem 0;
-    }
-
-    .hero-info-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 3rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      padding: 0.5rem 0;
-    }
-
-    .hero-info-row:first-child {
-      border-bottom: 1px solid var(--white);
-    }
-
-    .btn-hero {
-      display: inline-block;
-      background: var(--white);
-      color: var(--black);
-      font-family: var(--header-font);
-      font-size: 2.5rem;
-      padding: 1rem 3rem;
-      text-decoration: none;
-      transition: transform 0.2s;
-    }
-
-    .btn-hero:hover {
-      background: var(--black);
-      color: var(--white);
-      transform: translateY(-5px);
-    }
-
-    .intro {
-      padding: 6rem 0;
-      background-color: var(--primary-orange);
-    }
-
-    .intro-text {
-      font-size: 1.5rem;
-      max-width: 900px;
-      font-style: italic;
-      color: var(--white);
-      font-weight: 300;
-    }
-
-    .intro-text span {
-      color: var(--white);
-      font-style: normal;
-      font-weight: 300;
-      text-decoration: underline;
-    }
-
-    .colour-orange {
-      background-color: var(--primary-orange);
-      color: var(--white);
-    }
-
-    .what-you-will-learn .full-width-img,
-    .why-us .full-width-img {
-      width: 100%;
-      height: 600px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .who-for .full-width-img {
-      width: 100%;
-      height: 800px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .what-you-will-learn .content,
-    .who-for .content,
-    .why-us .content {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .img-wrapper {
-      border: 8px solid var(--white);
-      line-height: 0;
-    }
-
-    .img-wrapper img {
-      width: 100%;
-      height: 600px;
-      object-fit: cover;
-    }
-
-    .section-title {
-      font-size: 3.5rem;
-      margin-bottom: 2rem;
-      line-height: 1;
-    }
-
-    .list-items {
-      list-style: none;
-    }
-
-    .list-items li {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-      font-size: 1.1rem;
-      font-weight: 300;
-    }
-
-    .bullet {
-      width: 16px;
-      height: 16px;
-      background: var(--white);
-      flex-shrink: 0;
-      margin-top: 6px;
-    }
-
-    .who-for .img-container {
-      position: relative;
-    }
-
-    .quote-banner {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      z-index: 2;
-    }
-
-    .quote-banner blockquote {
-      font-family: var(--header-font);
-      font-size: 2rem;
-      text-transform: uppercase;
-      max-width: 900px;
-      text-align: right;
-      line-height: 1.2;
-      color: var(--white);
-    }
-
-    .white-box {
-      display: inline-block;
-      background: var(--white);
-      color: var(--primary-orange);
-      padding: 1.5rem;
-      font-family: var(--header-font);
-      font-size: 1.8rem;
-      margin-top: 3rem;
-    }
-
-    .panel-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border: 8px solid var(--primary-orange);
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .panel-content {
-      padding: 3rem;
-      background: var(--primary-orange);
-      color: var(--white);
-    }
-
-    .panel-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .course-format {
-      padding: 6rem 0;
-      background: var(--primary-orange);
-      color: var(--white);
-      text-align: center;
-    }
-
-    .table-container {
-      max-width: 600px;
-      margin: 3rem auto;
-      background: var(--white);
-      padding: 0.5rem;
-    }
-
-    .course-table {
-      width: 100%;
-      border: 4px solid var(--primary-orange);
-      border-collapse: collapse;
-      font-family: var(--header-font);
-      text-transform: uppercase;
-      font-size: 1.2rem;
-      color: var(--primary-orange);
-    }
-
-    .course-table td {
-      padding: 1.5rem;
-      border: 4px solid var(--primary-orange);
-      text-align: left;
-    }
-
-    .course-table td:last-child {
-      color: var(--black);
-    }
-
-    .tutor-box {
-      background: rgba(0, 0, 0, 0.1);
-      padding: 3rem;
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-      max-width: 900px;
-      margin: 4rem auto 0;
-      text-align: left;
-    }
-
-    .tutor-img {
-      width: 200px;
-      height: 200px;
-      filter: grayscale(1);
-      border: 4px solid var(--white);
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    footer {
-      background: var(--black);
-      color: var(--white);
-      padding: 4rem 0 2rem;
-    }
-
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 4rem;
-    }
-
-    .footer-logo {
-      font-size: 2.5rem;
-      font-family: var(--header-font);
-      text-transform: uppercase;
-    }
-
-    .footer-cta {
-      text-align: right;
-    }
-
-    .btn-footer {
-      background: var(--primary-orange);
-      color: var(--white);
-      padding: 1rem 3rem;
-      font-family: var(--header-font);
-      font-size: 1.8rem;
-      text-decoration: none;
-      display: inline-block;
-      margin-bottom: 0.5rem;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid #333;
-      padding-top: 2rem;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      color: #777;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .footer-links a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .footer-links a:hover {
-      color: var(--primary-orange);
-    }
-
-    @media (max-width: 768px) {
-      .section-grid, .panel-box, .hero-content, .footer-top, .tutor-box {
-        grid-template-columns: 1fr;
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero h1 {
-        font-size: 3rem;
-      }
-
-      .hero h1 span {
-        font-size: 1.5rem;
-      }
-
-      .section-title {
-        font-size: 2.5rem;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .footer-cta {
-        text-align: center;
-      }
-
-      .tutor-box {
-        align-items: center;
-      }
-
-      .quote-banner {
-        top: 1rem;
-        right: 1rem;
-      }
-
-      .quote-banner blockquote {
-        font-size: 1.2rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modular Synthesis and Electronic Sound Design | Schneiders Keller</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="hero jagged-hero">
-  <div class="hero-image-overlay">
-    <img alt="Synthesizer Pattern" src="img/modular_system_1_copy.png"/>
-  </div>
-  <div class="container hero-content">
-    <h1>MODULAR SYNTHESIS AND ELECTRONIC SOUND DESIGN <span>(BEGINNER COURSE)</span></h1>
-    <div class="hero-info-box">
-      <div class="hero-info-row">
-        <span>Date:</span>
-        <span>TBC</span>
-      </div>
-      <div class="hero-info-row">
-        <span>Price:</span>
-        <span>£299</span>
-      </div>
-    </div>
-    <br/>
-    <a class="btn-hero" href="#book">BOOK NOW</a>
-  </div>
-</header>
-<section class="intro">
-  <div class="container">
-    <p class="intro-text">
-      Discover the foundations of synthesis and learn to create your own sounds from the ground up in this hands-on
-      beginners course at <span>SchneidersKeller</span>. The <span>only space in London</span> where you can explore
-      modular hardware in person and learn directly from industry professionals.
-      <br/><br/>
-      Whether you are completely new to synthesis or a curious hobbyist looking to deepen your understanding, this course
-      will give you the knowledge and confidence to approach any modular system and begin making music with intention,
-      clarity and creativity.
-    </p>
-  </div>
-</section>
-<section class="what-you-will-learn colour-orange" id="learn">
-  <img class="full-width-img" alt="Learning Modular" src="img/jin_synth.png"/>
-  <div class="content">
-    <h2 class="section-title">What you will learn?</h2>
-    <p style="font-weight: bold; margin-bottom: 2rem;">Across four guided sessions, you will build a practical
-      understanding of:</p>
-    <ul class="list-items">
-      <li>
-        <div class="bullet"></div>
-        What sound is and how waveforms behave.
-      </li>
-      <li>
-        <div class="bullet"></div>
-        Core synthesis tools including oscillators, filters, VCAs, envelopes, modulation and more.
-      </li>
-      <li>
-        <div class="bullet"></div>
-        How control voltage, gates and triggers work and why they matter.
-      </li>
-      <li>
-        <div class="bullet"></div>
-        How to create and patch a complete synth voice from scratch.
-      </li>
-      <li>
-        <div class="bullet"></div>
-        Ways to add movement, dynamics and expression using LFOs and modulation sources.
-      </li>
-    </ul>
-  </div>
-</section>
-<section class="who-for colour-orange" id="who">
-  <div class="img-container">
-    <img class="full-width-img" alt="Synth Details" src="img/shop_floor_1.png"/>
-    <div class="quote-banner">
-      <blockquote>
-        "This course focuses on outcomes rather than a technical syllabus. By the end, you will understand both how to build
-        sounds and why synthesis works."
-      </blockquote>
-    </div>
-  </div>
-  <div class="content">
-    <h2 class="section-title">Who is this course for?</h2>
-    <ul class="list-items">
-      <li>
-        <div class="bullet"></div>
-        Complete beginners with no prior experience of synthesis.
-      </li>
-      <li>
-        <div class="bullet"></div>
-        Musicians who want to understand the fundamentals properly.
-      </li>
-      <li>
-        <div class="bullet"></div>
-        Anyone who wants hands on access to hardware in a supportive environment.
-      </li>
-      <li>
-        <div class="bullet"></div>
-        People curious about sound design and electronic performance.
-      </li>
-    </ul>
-    <div class="white-box">No equipment required!</div>
-  </div>
-</section>
-<section class="why-us colour-orange" id="why">
-  <img class="full-width-img" alt="Studio Workshop" src="img/edd_lesson.png"/>
-  <div class="content">
-    <h2 class="section-title">Why learn with us?</h2>
-    <div style="font-size: 1.1rem;">
-      <p style="margin-bottom: 1.5rem;">SchneidersKeller is the only dedicated space in London where you can learn
-        modular synthesis on real hardware. You will be guided by people who work with these instruments every
-        day.</p>
-      <p style="margin-bottom: 1.5rem;">You will use a wide range of high quality modular systems, gaining practical
-        skills that software alone cannot provide.</p>
-      <p>Our ethos is rooted in community, experimentation and hands on discovery.</p>
-    </div>
-  </div>
-</section>
-<section class="course-format" id="format">
-  <div class="container">
-    <h2 class="section-title" style="font-size: 4.5rem;">Course Format</h2>
-    <div class="table-container">
-      <table class="course-table">
-        <tbody>
-        <tr>
-          <td>Price</td>
-          <td>£299</td>
-        </tr>
-        <tr>
-          <td>Sessions</td>
-          <td>4x 2hr</td>
-        </tr>
-        <tr>
-          <td>Equipment</td>
-          <td>Provided</td>
-        </tr>
-        <tr>
-          <td>Class Size</td>
-          <td>10</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-    <h2 class="section-title" style="margin-top: 6rem;">About Your Tutor</h2>
-    <div class="tutor-box">
-      <img alt="Tutor" class="tutor-img" src="img/jin_photo.png"/>
-      <p style="font-size: 1.25rem; font-style: italic;">
-        Led by resident sound designers and veteran synthesists, you'll benefit from years of professional experience in
-        electronic music production, live performance, and hardware maintenance.
-      </p>
-    </div>
-  </div>
-</section>
-<footer id="book">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-logo">SchneidersKeller</div>
-      <div class="footer-cta">
-        <a class="btn-footer" href="#">BOOK MY PLACE</a>
-        <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #999;">Limited to 10 spaces. Early booking advised.</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2024 SchneidersKeller London. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="#">Terms</a>
-        <a href="#">Privacy</a>
-        <a href="#">Instagram</a>
-      </div>
-    </div>
-  </div>
-</footer>
+    <div class="slideshow">
+        <div class="slide slide-1 active" data-slide="1">
+            <div class="slide-main">
+                <img src="Intro_Page_One.jpg" alt="Hands patching modular synthesizer" class="slide-image">
+                <div class="content-panel">
+                    <h1 class="panel-title">Modular<br>Synthesis &amp;<br>Electronic<br>Sound Design</h1>
+                </div>
+                <div class="slide-number">1</div>
+                <a href="#" class="book-now">BOOK<br>NOW!</a>
+            </div>
+            <div class="slide-footer">
+                <div class="logo">
+                    <img src="Design%20Files/sk_logo_blue.avif" class="logo-img" alt="Schneiders Keller">
+                </div>
+                <div class="footer-content">
+                    <div class="footer-text">Discover the foundations of synthesis and learn to create your own sounds from the ground up in this hands-on beginners course at Schneiders Keller. The only space in London where you can explore modular hardware in person and learn directly from industry professionals.</div>
+                    <div class="footer-text">Whether you are completely new to synthesis or a curious hobbyist looking to deepen your understanding, this course will give you the knowledge and confidence to approach any modular system and begin making music with intention, clarity and creativity.</div>
+                </div>
+                <div class="nav-controls">
+                    <span class="nav-label">What will<br>you learn?</span>
+                    <button class="nav-btn next-btn" aria-label="Next slide">&gt;</button>
+                </div>
+            </div>
+        </div>
 
+        <div class="slide slide-2" data-slide="2">
+            <div class="slide-main">
+                <img src="Learn_Page_Two.jpg" alt="Instructor teaching modular synthesis" class="slide-image">
+                <div class="content-panel">
+                    <div class="quote-mark">"</div>
+                    <p class="quote-text">This course focuses on outcomes rather than a technical syllabus. By the end, you will understand both how to build sounds and why synthesis works, which sets you up to explore with purpose.</p>
+                </div>
+                <div class="slide-number">2</div>
+                <a href="#" class="book-now">BOOK<br>NOW!</a>
+            </div>
+            <div class="slide-footer">
+                <div class="logo">
+                    <img src="Design%20Files/sk_logo_blue.avif" class="logo-img" alt="Schneiders Keller">
+                </div>
+                <div class="footer-content single-col">
+                    <div>
+                        <h3 class="footer-heading">What You Will Learn...</h3>
+                        <p class="footer-text">Text goes in here...</p>
+                    </div>
+                </div>
+                <div class="nav-controls">
+                    <button class="nav-btn prev-btn" aria-label="Previous slide">&lt;</button>
+                    <span class="nav-label">Who is this<br>course for?</span>
+                    <button class="nav-btn next-btn" aria-label="Next slide">&gt;</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide slide-3" data-slide="3">
+            <div class="slide-main">
+                <img src="Who_Page_Threer.jpg" alt="Doepfer modular system" class="slide-image">
+                <div class="content-panel">
+                    <h2 class="panel-title smaller">No Equipment<br>Or Prior<br>Knowledge<br>Is Required!</h2>
+                </div>
+                <div class="slide-number">3</div>
+                <a href="#" class="book-now">BOOK<br>NOW!</a>
+            </div>
+            <div class="slide-footer">
+                <div class="logo">
+                    <img src="Design%20Files/sk_logo_blue.avif" class="logo-img" alt="Schneiders Keller">
+                </div>
+                <div class="footer-content single-col">
+                    <div>
+                        <h3 class="footer-heading">Who Is This Course For?</h3>
+                        <p class="footer-text">Text goes in here...</p>
+                    </div>
+                </div>
+                <div class="nav-controls">
+                    <button class="nav-btn prev-btn" aria-label="Previous slide">&lt;</button>
+                    <span class="nav-label">Why learn<br>with us?</span>
+                    <button class="nav-btn next-btn" aria-label="Next slide">&gt;</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide slide-4" data-slide="4">
+            <div class="slide-main">
+                <img src="Price_Page_Four.jpg" alt="Professional modular setup" class="slide-image">
+                <div class="content-panel">
+                    <p class="course-info">4x 2HR Sessions<br>Equipment Provided<br>8 People Per Class</p>
+                    <p class="price">Price £299</p>
+                </div>
+                <div class="slide-number">4</div>
+                <a href="#" class="book-now">BOOK<br>NOW!</a>
+            </div>
+            <div class="slide-footer">
+                <div class="logo">
+                    <img src="Design%20Files/sk_logo_blue.avif" class="logo-img" alt="Schneiders Keller">
+                </div>
+                <div class="footer-content">
+                    <div>
+                        <h3 class="footer-heading">Why Learn With Us?</h3>
+                        <p class="footer-text">Schneiders Keller is the only dedicated space in London where you can learn modular synthesis on real hardware. You will be guided by people who work with these instruments every day.</p>
+                    </div>
+                    <div>
+                        <p class="footer-text">You will use a wide range of high quality modular systems and electronic instruments, gaining practical and tactile skills that software alone cannot provide. Our ethos is rooted in community, experimentation and hands on discovery. This course is designed to reflect that spirit.</p>
+                    </div>
+                </div>
+                <div class="nav-controls">
+                    <button class="nav-btn prev-btn" aria-label="Previous slide">&lt;</button>
+                    <span class="nav-label">About your<br>tutor</span>
+                    <button class="nav-btn next-btn" aria-label="Next slide">&gt;</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide slide-5" data-slide="5">
+            <div class="slide-main">
+                <img src="Tutor_Page_Five.jpg" alt="William Stokes - Tutor" class="slide-image">
+                <div class="content-panel">
+                    <div class="quote-mark">"</div>
+                    <p class="quote-text">As well as being a guitarist and pianist, he is a synthesis enthusiast with a particular interest in sampling and sound manipulation.</p>
+                </div>
+                <div class="slide-number">5</div>
+                <a href="#" class="book-now">BOOK<br>NOW!</a>
+            </div>
+            <div class="slide-footer">
+                <div class="logo">
+                    <img src="Design%20Files/sk_logo_blue.avif" class="logo-img" alt="Schneiders Keller">
+                </div>
+                <div class="footer-content">
+                    <div>
+                        <h3 class="footer-heading">About Your Tutor</h3>
+                        <p class="footer-text">William Stokes is an educator, researcher and synthesist with extensive experience in teaching electronic sound and music technology. He writes for Sound On Sound magazine, contributes to academic research on electronic music and teaches at City, University of London. His approach combines clear technical understanding with creative and accessible guidance, making him</p>
+                    </div>
+                    <div>
+                        <p class="footer-text">an ideal mentor for those taking their first steps into synthesis. He is also a musician and performer in three-piece avant-psych band Voka Gentle. With Voka Gentle he has made records with producers from Gareth Jones (Depeche Mode, Grizzly Bear, Nick Cave) to Sam Petts-Davies (Radiohead, Frank Ocean, Roger Waters).</p>
+                    </div>
+                </div>
+                <div class="nav-controls">
+                    <button class="nav-btn prev-btn" aria-label="Previous slide">&lt;</button>
+                    <span class="nav-label">Why learn<br>with us?</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-dots">
+            <div class="dot active" data-slide="1"></div>
+            <div class="dot" data-slide="2"></div>
+            <div class="dot" data-slide="3"></div>
+            <div class="dot" data-slide="4"></div>
+            <div class="dot" data-slide="5"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
