@@ -1,8 +1,137 @@
+/* ===== SizmoPro (normal) ===== */
 @font-face {
-    font-family: 'SizmoPro';
-    src: local('SizmoPro'), local('Sizmo Pro');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "SizmoPro";
+  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-Light.woff2?v=1760171452") format("woff2"),
+       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-Light.woff?v=1760171784") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SizmoPro";
+  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro.woff2?v=1760171453") format("woff2"),
+       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro.woff?v=1760171783") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SizmoPro";
+  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-Medium.woff2?v=1760171453") format("woff2"),
+       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-Medium.woff?v=1760171783") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SizmoPro";
+  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-Demibold.woff2?v=1760171452") format("woff2"),
+       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-Demibold.woff?v=1760171783") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SizmoPro";
+  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-Bold.woff2?v=1760171452") format("woff2"),
+       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-Bold.woff?v=1760171783") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== SizmoPro (italic/oblique) ===== */
+@font-face {
+  font-family: "SizmoPro";
+  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-LightOblique.woff2?v=1760171453") format("woff2"),
+       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-LightOblique.woff?v=1760171783") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SizmoPro";
+  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-Oblique.woff2?v=1760171453") format("woff2"),
+       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-Oblique.woff?v=1760171783") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SizmoPro";
+  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-MediumOblique.woff2?v=1760171453") format("woff2"),
+       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-MediumOblique.woff?v=1760171783") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SizmoPro";
+  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-DemiboldOblique.woff2?v=1760171452") format("woff2"),
+       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-DemiboldOblique.woff?v=1760171783") format("woff");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SizmoPro";
+  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-BoldOblique.woff2?v=1760171453") format("woff2"),
+       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-BoldOblique.woff?v=1760171783") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ===== SizmoLinePro ===== */
+@font-face {
+  font-family: "SizmoLinePro";
+  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoLinePro-Light.woff2?v=1760171452") format("woff2"),
+       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoLinePro-Light.woff?v=1760171783") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SizmoLinePro";
+  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoLinePro.woff?v=1760171783") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SizmoLinePro";
+  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoLinePro-Medium.woff?v=1760171784") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SizmoLinePro";
+  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoLinePro-Demibold.woff2?v=1760171453") format("woff2"),
+       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoLinePro-Demibold.woff?v=1760171783") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SizmoLinePro";
+  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoLinePro-Bold.woff2?v=1760171453") format("woff2"),
+       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoLinePro-Bold.woff?v=1760171784") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 * { 
@@ -52,7 +181,7 @@ html, body {
 .slide-main {
     position: relative;
     flex: 1;
-    overflow: hidden;
+    overflow: visible;
     margin: 20px 20px 0 20px;
 }
 
@@ -71,12 +200,12 @@ html, body {
     top: 0;
     left: 0;
     background: var(--white);
-    padding: 45px 55px;
+    padding: 40px 75px 10px 0;
     max-width: 500px;
-    min-height: 320px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
     z-index: 10;
 }
 
@@ -86,15 +215,17 @@ html, body {
     color: var(--black);
     margin-bottom: 25px;
     font-weight: bold;
+    padding-left: 45px;
+    padding-top: 45px;
 }
 
 .panel-title {
-    font-size: 48px;
+    font-size: 32px;
     line-height: 1.0;
     color: var(--black);
     text-transform: uppercase;
-    font-weight: normal;
-    letter-spacing: 0;
+    font-weight: 300;
+    letter-spacing: 1px;
 }
 
 .panel-title.smaller {
@@ -107,6 +238,7 @@ html, body {
     color: var(--black);
     text-transform: uppercase;
     font-weight: normal;
+    padding: 0 45px 45px;
 }
 
 .course-info {
@@ -115,6 +247,7 @@ html, body {
     color: var(--black);
     text-transform: uppercase;
     margin-bottom: 10px;
+    padding: 45px 45px 0;
 }
 
 .price {
@@ -122,12 +255,13 @@ html, body {
     color: var(--navy);
     text-transform: uppercase;
     font-weight: bold;
+    padding: 0 45px 45px;
 }
 
 .slide-number {
     position: absolute;
     right: 30px;
-    bottom: 0;
+    bottom: 40px;
     font-size: 320px;
     color: var(--white);
     line-height: 0.75;
@@ -137,22 +271,32 @@ html, body {
 }
 
 .slide-number::after {
-    content: '.';
+    content: '';
+    display: inline-block;
+    width: 0.10em;
+    height: 0.10em;
+    background: var(--white);
+    border-radius: 50%;
+    vertical-align: baseline;
+    position: relative;
+    left: 0.14em;
 }
 
 .book-now {
     position: absolute;
     right: 40px;
     bottom: 0;
+    transform: translateY(75%);
     background: var(--white);
     color: var(--black);
-    padding: 18px 28px;
+    padding: 28px 58px 5px 5px;
     font-family: 'SizmoPro', 'Bebas Neue', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 600;
     line-height: 1.1;
     letter-spacing: 1px;
     text-decoration: none;
-    text-align: center;
+    text-align: left;
     z-index: 20;
     transition: background 0.3s ease;
 }
@@ -237,6 +381,8 @@ html, body {
 }
 
 .nav-label {
+    font-family: 'SizmoPro', 'Bebas Neue', sans-serif;
+    font-weight: 600;
     font-size: 13px;
     color: var(--yellow);
     letter-spacing: 1px;
@@ -247,11 +393,11 @@ html, body {
 
 .progress-dots {
     position: fixed;
-    right: 25px;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
     z-index: 100;
 }
@@ -285,10 +431,10 @@ html, body {
     }
     .content-panel {
         max-width: 420px;
-        padding: 40px 45px;
+        padding: 40px 75px 10px 0;
     }
     .panel-title {
-        font-size: 40px;
+        font-size: 32px;
     }
     .logo-img {
         height: 48px;
@@ -348,7 +494,7 @@ html, body {
     }
     .book-now {
         right: 15px;
-        bottom: 15px;
+        bottom: 0;
         padding: 12px 18px;
         font-size: 14px;
     }
