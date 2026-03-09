@@ -143,10 +143,11 @@ html, body {
 }
 
 .quote-mark {
-    font-size: 70px;
-    line-height: 0.5;
+    font-family: 'SizmoPro', 'Arial Black', sans-serif;
+    font-size: 120px;
+    line-height: 0;
     color: var(--black);
-    margin-bottom: 25px;
+    margin-bottom: 8px;
     font-weight: bold;
 }
 
