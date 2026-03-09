@@ -416,24 +416,68 @@ html, body {
     .slide::before {
         display: none;
     }
-    .slide-number {
-        font-size: 100px;
-        right: 10px;
+    .slide {
+        overflow-y: auto;
+    }
+    .slide-main {
+        flex: none;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        overflow: visible;
     }
     .content-panel {
-        max-width: 250px;
-        padding: 25px 30px;
+        position: static;
+        max-width: 100%;
+        min-height: auto;
+        padding: 20px 20px 10px 0;
+        background: var(--navy);
+        order: -1;
     }
     .panel-title {
         font-size: 26px;
+        color: var(--white);
+    }
+    .quote-mark {
+        color: var(--white);
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+    .quote-text {
+        color: var(--white);
+        padding: 0 20px 20px;
+    }
+    .course-info {
+        color: var(--white);
+        padding: 20px 20px 0;
+    }
+    .price {
+        color: var(--yellow);
+        padding: 0 20px 20px;
+    }
+    .slide-image {
+        position: static;
+        height: 200px;
+        margin: 0 10px;
+        width: calc(100% - 20px);
+    }
+    .slide-number {
+        display: none;
     }
     .book-now {
-        right: 15px;
+        position: absolute;
+        transform: translateY(65%);
+        left: 25px;
+        right: auto;
         bottom: 0;
-        padding: 12px 18px;
+        padding: 30px 65px 5px 5px;
         font-size: 14px;
     }
+    .slide-footer {
+        flex: 1;
+        padding: 40px 10px;
+    }
     .footer-content {
-        padding-top: 30px;
+        padding-top: 10px;
     }
 }
