@@ -32,12 +32,12 @@ class Slideshow {
             }
         });
 
-        // Mouse wheel navigation — one slide per scroll gesture
         const slideshowEl = document.querySelector('.slideshow');
-        let accumulatedDelta = 0;
-        let wheelTimeout = null;
-        const DELTA_THRESHOLD = 50;
         if (slideshowEl) {
+            // Mouse wheel navigation — one slide per scroll gesture
+            let accumulatedDelta = 0;
+            let wheelTimeout = null;
+            const DELTA_THRESHOLD = 50;
             slideshowEl.addEventListener('wheel', (e) => {
                 e.preventDefault();
                 if (this.isAnimating) return;
@@ -54,12 +54,10 @@ class Slideshow {
                     this.prevSlide();
                 }
             }, { passive: false });
-        }
 
-        // Touch swipe navigation
-        let touchStartX = 0;
-        let touchStartY = 0;
-        if (slideshowEl) {
+            // Touch swipe navigation
+            let touchStartX = 0;
+            let touchStartY = 0;
             slideshowEl.addEventListener('touchstart', (e) => {
                 touchStartX = e.touches[0].clientX;
                 touchStartY = e.touches[0].clientY;
@@ -71,7 +69,6 @@ class Slideshow {
                 const absDeltaX = Math.abs(deltaX);
                 const absDeltaY = Math.abs(deltaY);
 
-                // Require minimum 50px swipe and primarily horizontal
                 if (absDeltaX > 50 && absDeltaX > absDeltaY) {
                     if (deltaX < 0) {
                         this.nextSlide();

@@ -44,96 +44,6 @@
   font-display: swap;
 }
 
-/* ===== SizmoPro (italic/oblique) ===== */
-@font-face {
-  font-family: "SizmoPro";
-  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-LightOblique.woff2?v=1760171453") format("woff2"),
-       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-LightOblique.woff?v=1760171783") format("woff");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "SizmoPro";
-  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-Oblique.woff2?v=1760171453") format("woff2"),
-       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-Oblique.woff?v=1760171783") format("woff");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "SizmoPro";
-  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-MediumOblique.woff2?v=1760171453") format("woff2"),
-       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-MediumOblique.woff?v=1760171783") format("woff");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "SizmoPro";
-  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-DemiboldOblique.woff2?v=1760171452") format("woff2"),
-       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-DemiboldOblique.woff?v=1760171783") format("woff");
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "SizmoPro";
-  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-BoldOblique.woff2?v=1760171453") format("woff2"),
-       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoPro-BoldOblique.woff?v=1760171783") format("woff");
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
-/* ===== SizmoLinePro ===== */
-@font-face {
-  font-family: "SizmoLinePro";
-  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoLinePro-Light.woff2?v=1760171452") format("woff2"),
-       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoLinePro-Light.woff?v=1760171783") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "SizmoLinePro";
-  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoLinePro.woff?v=1760171783") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "SizmoLinePro";
-  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoLinePro-Medium.woff?v=1760171784") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "SizmoLinePro";
-  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoLinePro-Demibold.woff2?v=1760171453") format("woff2"),
-       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoLinePro-Demibold.woff?v=1760171783") format("woff");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "SizmoLinePro";
-  src: url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoLinePro-Bold.woff2?v=1760171453") format("woff2"),
-       url("https://cdn.shopify.com/s/files/1/0951/3055/0604/files/SizmoLinePro-Bold.woff?v=1760171784") format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 * { 
     margin: 0; 
     padding: 0; 
@@ -150,7 +60,7 @@
 html, body { 
     height: 100%; 
     overflow: hidden; 
-    font-family: 'SizmoPro', 'Bebas Neue', 'Arial Black', sans-serif;
+    font-family: 'SizmoPro', 'Arial Black', sans-serif;
 }
 
 .slideshow { 
@@ -251,7 +161,7 @@ html, body {
     letter-spacing: 1px;
 }
 
-.panel-title.smaller {
+.panel-title.larger {
     font-size: 44px;
 }
 
@@ -290,7 +200,6 @@ html, body {
     line-height: 0.75;
     z-index: 5;
     font-weight: normal;
-    opacity: 1;
 }
 
 .slide-number::after {
@@ -313,7 +222,7 @@ html, body {
     background: var(--white);
     color: var(--black);
     padding: 28px 58px 5px 5px;
-    font-family: 'SizmoPro', 'Bebas Neue', sans-serif;
+    font-family: 'SizmoPro', sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: 1.1;
@@ -395,7 +304,7 @@ html, body {
     padding: 0 4px;
     transition: color 0.3s ease;
     line-height: 1;
-    font-family: 'SizmoPro', 'Bebas Neue', 'Arial Black', sans-serif;
+    font-family: 'SizmoPro', 'Arial Black', sans-serif;
     letter-spacing: 1px;
 }
 
@@ -404,7 +313,7 @@ html, body {
 }
 
 .nav-label {
-    font-family: 'SizmoPro', 'Bebas Neue', sans-serif;
+    font-family: 'SizmoPro', sans-serif;
     font-weight: 600;
     font-size: 13px;
     color: var(--yellow);
@@ -454,10 +363,6 @@ html, body {
     }
     .content-panel {
         max-width: 420px;
-        padding: 40px 75px 10px 0;
-    }
-    .panel-title {
-        font-size: 32px;
     }
     .logo-img {
         height: 48px;
@@ -475,9 +380,6 @@ html, body {
         max-width: 300px;
         padding: 30px 35px;
         min-height: 250px;
-    }
-    .panel-title {
-        font-size: 32px;
     }
     .quote-text {
         font-size: 18px;
