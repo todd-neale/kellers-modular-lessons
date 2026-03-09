@@ -53,6 +53,7 @@ html, body {
     position: relative;
     flex: 1;
     overflow: hidden;
+    margin: 20px 20px 0 20px;
 }
 
 .slide-image {
@@ -294,6 +295,9 @@ html, body {
 }
 
 @media (max-width: 900px) {
+    .slide-main {
+        margin: 0 10px;
+    }
     .slide-number {
         font-size: 150px;
     }
