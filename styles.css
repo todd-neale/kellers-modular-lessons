@@ -134,8 +134,8 @@ html, body {
     left: 0;
     background: var(--white);
     padding: 40px 75px 10px 0;
-    max-width: 500px;
-    min-height: 250px;
+    width: 500px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -148,8 +148,6 @@ html, body {
     color: var(--black);
     margin-bottom: 25px;
     font-weight: bold;
-    padding-left: 45px;
-    padding-top: 45px;
 }
 
 .panel-title {
@@ -166,29 +164,26 @@ html, body {
 }
 
 .quote-text {
-    font-size: 22px;
+    font-size: 18px;
     line-height: 1.25;
     color: var(--black);
     text-transform: uppercase;
     font-weight: normal;
-    padding: 0 45px 45px;
 }
 
 .course-info {
-    font-size: 28px;
+    font-size: 22px;
     line-height: 1.2;
     color: var(--black);
     text-transform: uppercase;
     margin-bottom: 10px;
-    padding: 45px 45px 0;
 }
 
 .price {
-    font-size: 52px;
+    font-size: 30px;
     color: var(--navy);
     text-transform: uppercase;
     font-weight: bold;
-    padding: 0 45px 45px;
 }
 
 .slide-number {
@@ -362,7 +357,8 @@ html, body {
         right: 20px;
     }
     .content-panel {
-        max-width: 420px;
+        width: 420px;
+        height: 220px;
     }
     .logo-img {
         height: 48px;
@@ -377,12 +373,12 @@ html, body {
         font-size: 150px;
     }
     .content-panel {
-        max-width: 300px;
+        width: 300px;
+        height: 200px;
         padding: 30px 35px;
-        min-height: 250px;
     }
     .quote-text {
-        font-size: 18px;
+        font-size: 16px;
     }
     .slide-footer {
         grid-template-columns: auto 1fr;
@@ -446,8 +442,9 @@ html, body {
     }
     .content-panel {
         position: static;
+        width: auto;
         max-width: 70%;
-        min-height: auto;
+        height: auto;
         padding: 90px 20px 10px 10px;
         background: var(--white);
         order: -1;
@@ -458,20 +455,16 @@ html, body {
     }
     .quote-mark {
         color: var(--black);
-        padding-left: 10px;
-        padding-top: 20px;
     }
     .quote-text {
         color: var(--black);
-        padding: 0 20px 20px 10px;
     }
     .course-info {
         color: var(--black);
-        padding: 20px 20px 0 10px;
     }
     .price {
         color: var(--navy);
-        padding: 0 20px 20px 10px;
+        font-size: 32px;
     }
     .slide-image {
         position: static;
