@@ -430,30 +430,30 @@ html, body {
         position: static;
         max-width: 100%;
         min-height: auto;
-        padding: 20px 20px 10px 0;
-        background: var(--navy);
+        padding: 40px 20px 10px 10px;
+        background: var(--white);
         order: -1;
     }
     .panel-title {
         font-size: 26px;
-        color: var(--white);
+        color: var(--black);
     }
     .quote-mark {
-        color: var(--white);
-        padding-left: 20px;
+        color: var(--black);
+        padding-left: 10px;
         padding-top: 20px;
     }
     .quote-text {
-        color: var(--white);
-        padding: 0 20px 20px;
+        color: var(--black);
+        padding: 0 20px 20px 10px;
     }
     .course-info {
-        color: var(--white);
-        padding: 20px 20px 0;
+        color: var(--black);
+        padding: 20px 20px 0 10px;
     }
     .price {
-        color: var(--yellow);
-        padding: 0 20px 20px;
+        color: var(--navy);
+        padding: 0 20px 20px 10px;
     }
     .slide-image {
         position: static;
