@@ -31,6 +31,56 @@ class Slideshow {
                 this.prevSlide();
             }
         });
+
+        // Mouse wheel navigation — one slide per scroll gesture
+        const slideshowEl = document.querySelector('.slideshow');
+        let accumulatedDelta = 0;
+        let wheelTimeout = null;
+        const DELTA_THRESHOLD = 50;
+        if (slideshowEl) {
+            slideshowEl.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                if (this.isAnimating) return;
+
+                accumulatedDelta += e.deltaY || e.deltaX;
+                clearTimeout(wheelTimeout);
+                wheelTimeout = setTimeout(() => { accumulatedDelta = 0; }, 200);
+
+                if (accumulatedDelta > DELTA_THRESHOLD) {
+                    accumulatedDelta = 0;
+                    this.nextSlide();
+                } else if (accumulatedDelta < -DELTA_THRESHOLD) {
+                    accumulatedDelta = 0;
+                    this.prevSlide();
+                }
+            }, { passive: false });
+        }
+
+        // Touch swipe navigation
+        let touchStartX = 0;
+        let touchStartY = 0;
+        if (slideshowEl) {
+            slideshowEl.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+            }, { passive: true });
+
+            slideshowEl.addEventListener('touchend', (e) => {
+                const deltaX = e.changedTouches[0].clientX - touchStartX;
+                const deltaY = e.changedTouches[0].clientY - touchStartY;
+                const absDeltaX = Math.abs(deltaX);
+                const absDeltaY = Math.abs(deltaY);
+
+                // Require minimum 50px swipe and primarily horizontal
+                if (absDeltaX > 50 && absDeltaX > absDeltaY) {
+                    if (deltaX < 0) {
+                        this.nextSlide();
+                    } else {
+                        this.prevSlide();
+                    }
+                }
+            }, { passive: true });
+        }
     }
     
     goToSlide(slideNum) {
