@@ -483,7 +483,7 @@ html, body {
         font-size: 18px;
     }
     .slide-footer {
-        grid-template-columns: 1fr;
+        grid-template-columns: auto 1fr;
         gap: 20px;
         padding: 20px 30px;
         min-height: auto;
@@ -491,11 +491,18 @@ html, body {
     }
     .footer-content {
         grid-template-columns: 1fr;
+        grid-column: 1 / -1;
         align-self: auto;
-        padding-top: 0;
+        padding-top: 40px;
+    }
+    .logo {
+        grid-row: 3;
+        align-items: center;
     }
     .nav-controls {
-        justify-content: center;
+        grid-row: 3;
+        justify-content: flex-end;
+        align-self: center;
         padding-bottom: 0;
     }
     .logo-img {
@@ -523,5 +530,8 @@ html, body {
         bottom: 0;
         padding: 12px 18px;
         font-size: 14px;
+    }
+    .footer-content {
+        padding-top: 30px;
     }
 }
