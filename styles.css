@@ -166,14 +166,14 @@ html, body {
     padding: 25px 50px;
     display: grid;
     grid-template-columns: 140px 1fr auto;
-    align-items: end;
+    align-items: stretch;
     gap: 50px;
     min-height: 220px;
 }
 
 .logo {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .logo-img {
@@ -213,8 +213,9 @@ html, body {
 
 .nav-controls {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     gap: 8px;
+    align-self: end;
     padding-bottom: 5px;
 }
 
